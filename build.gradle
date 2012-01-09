@@ -24,10 +24,10 @@ dependencies {
 }
 
 task deploylocal(dependsOn: build) << {
-    println "Copy from ${libsDir.getPath()} into ${tomcatHome}/webapps"
+    println "Copy from ${libsDir.getPath()} into ${liferayDeploy}"
     copy{
         from libsDir
-        into "${tomcatHome}/webapps"
+        into "${liferayDeploy}"
         include '*.war'
     }
 }
