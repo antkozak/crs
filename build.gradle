@@ -2,13 +2,10 @@ apply plugin: "java"
 apply plugin: "maven"
 apply plugin: 'war'
 
-group = 'test'
+group = 'com.ccc'
 version = '0.0.1-SNAPSHOT'
 
-env = System.getenv()
-
 def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
-def tomcatHome = env['CATALINA_HOME']
 
 repositories {
     mavenCentral()
@@ -16,10 +13,14 @@ repositories {
 }
 
 dependencies {
+    compile group: "org.springframework", name: "spring-core", version: "3.1.0.RELEASE"
+    compile group: "org.springframework", name: "spring-beans", version: "3.1.0.RELEASE"
+    compile group: "org.springframework", name: "spring-context", version: "3.1.0.RELEASE"
+    compile group: "org.springframework", name: "spring-web", version: "3.1.0.RELEASE"
+    compile group: "org.springframework", name: "spring-webmvc-portlet", version: "3.1.0.RELEASE"
     providedCompile group: 'javax.portlet', name: 'portlet-api', version: '2.0'
-    providedCompile group: 'com.liferay.portal', name: 'portal-service', version: '5.2.3-RELEASE'
-    providedCompile group: 'com.liferay.portal', name: 'portal-kernel', version: '5.2.3-RELEASE'
-
+    compile group: "jstl", name: "jstl", version: "1.2"
+    compile group: "taglibs", name: "standard", version: "1.1.2"
 }
 
 task deploylocal(dependsOn: build) << {
