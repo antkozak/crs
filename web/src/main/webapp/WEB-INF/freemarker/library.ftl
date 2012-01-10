@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <#list folders as folder>
-  <h2>${folder.name}</h2>
+  <a href="<@spring.url "/browse/${folder.id}"/>">${folder.name}</a>
 </#list>

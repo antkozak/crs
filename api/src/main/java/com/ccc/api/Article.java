@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  * @author Nikita Levyankov
  */
-public interface Folder extends Serializable {
+public interface Article extends Serializable {
 
     Integer getId();
 
