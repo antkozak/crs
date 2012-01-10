@@ -4,24 +4,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="helloWorldController" class="com.ccc.HWController"/>
+    <bean id="libraryService" class="com.ccc.service.LibraryServiceImpl"/>
+
+    <bean id="libraryController" class="com.ccc.LibraryController">
+        <property name="libraryService" ref="libraryService"/>
+    </bean>
 
     <bean id="portletModeHandlerMapping" class="org.springframework.web.portlet.handler.PortletModeHandlerMapping">
         <property name="portletModeMap">
             <map>
                 <entry key="view">
-                    <ref bean="helloWorldController"/>
+                    <ref bean="libraryController"/>
                 </entry>
             </map>
         </property>
     </bean>
-    <!--<bean id="viewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass"
-                  value="org.springframework.web.servlet.view.InternalResourceView"/>
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>-->
 
     <!-- freemarker config -->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
@@ -36,9 +33,6 @@
         <property name="cache" value="true"/>
         <property name="prefix" value=""/>
         <property name="suffix" value=".ftl"/>
-
-        <!-- if you want to use the Spring FreeMarker macros, set this property to true -->
-        <!--<property name="exposeSpringMacroHelpers" value="true"/>-->
-
+        <property name="exposeSpringMacroHelpers" value="true"/>
     </bean>
 </beans>

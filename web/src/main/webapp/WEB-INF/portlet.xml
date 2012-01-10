@@ -4,16 +4,16 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
              xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
     <portlet>
-        <portlet-name>hwPortlet</portlet-name>
-        <display-name>hwPortletDisplayName</display-name>
+        <portlet-name>library</portlet-name>
+        <display-name>libraryPortletDisplayName</display-name>
         <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>view</portlet-mode>
         </supports>
-        <resource-bundle>content.Language-ext</resource-bundle>
+        <resource-bundle>Language-ext</resource-bundle>
         <portlet-info>
-            <title>Hello World</title>
+            <title>POC Library</title>
         </portlet-info>
     </portlet>
 </portlet-app>

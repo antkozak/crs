@@ -3,7 +3,7 @@
 
  <liferay-portlet-app>
  	<portlet>
- 		<portlet-name>hwPortlet</portlet-name>
+ 		<portlet-name>library</portlet-name>
  		<instanceable>true</instanceable>
  	</portlet>
  </liferay-portlet-app>

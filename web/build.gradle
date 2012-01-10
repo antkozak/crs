@@ -1,0 +1,8 @@
+task deploylocal(dependsOn: build) << {
+    println "Copy from ${libsDir.getPath()} into ${liferayDeploy}"
+    copy{
+        from libsDir
+        into "${liferayDeploy}"
+        include '*.war'
+    }
+}

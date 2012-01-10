@@ -1,5 +1,6 @@
 package com.ccc;
 
+import com.ccc.api.service.LibraryService;
 import java.util.HashMap;
 import java.util.Map;
 import javax.portlet.ActionRequest;
@@ -16,14 +17,20 @@ import org.springframework.web.portlet.mvc.Controller;
  *
  * @author Nikita Levyankov
  */
-public class HWController implements Controller {
+public class LibraryController implements Controller {
+
+    private LibraryService libraryService;
+
+    public void setLibraryService(LibraryService libraryService) {
+        this.libraryService = libraryService;
+    }
 
     public void handleActionRequest(ActionRequest request, ActionResponse response) throws Exception {
     }
 
     public ModelAndView handleRenderRequest(RenderRequest request, RenderResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
-        model.put("helloWorldMessage", "Hello World");
-        return new ModelAndView("test", model);
+        model.put("folders", libraryService.getFolders());
+        return new ModelAndView("library", model);
     }
 }

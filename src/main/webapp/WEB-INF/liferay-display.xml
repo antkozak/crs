@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
- <display>
- 	<category name="category.hw">
- 		<portlet id="hwPortlet" />
- 	</category>
- </display>
