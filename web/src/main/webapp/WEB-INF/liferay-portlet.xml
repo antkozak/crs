@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 5.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_5_2_0.dtd">
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 5.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-portlet-app_5_2_0.dtd">
 
- <liferay-portlet-app>
- 	<portlet>
- 		<portlet-name>library</portlet-name>
- 		<instanceable>true</instanceable>
- 	</portlet>
- </liferay-portlet-app>
+<liferay-portlet-app>
+    <portlet>
+        <portlet-name>library</portlet-name>
+        <instanceable>true</instanceable>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+</liferay-portlet-app>

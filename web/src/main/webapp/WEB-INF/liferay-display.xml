@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
- <display>
- 	<category name="category.poc">
- 		<portlet id="library" />
- 	</category>
- </display>
+<display>
+    <category name="category.poc">
+        <portlet id="library"/>
+    </category>
+</display>

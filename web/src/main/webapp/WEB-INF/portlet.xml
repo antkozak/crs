@@ -5,13 +5,12 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
     <portlet>
         <portlet-name>library</portlet-name>
-        <display-name>libraryPortletDisplayName</display-name>
         <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>view</portlet-mode>
         </supports>
-        <resource-bundle>Language-ext</resource-bundle>
+        <resource-bundle>Messages</resource-bundle>
         <portlet-info>
             <title>POC Library</title>
         </portlet-info>

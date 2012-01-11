@@ -1,0 +1,29 @@
+/* importing the AlloyUI default css */
+@import url(http://alterform.com/alloy/build/aui-skin-classic/css/aui-skin-classic-all-min.css);
+
+div.menu {
+    width: 50px;
+}
+
+.aui-column-content {
+    padding: 0px;
+}
+
+.aui-column-content h3 {
+	background: #ccc;
+	padding: 3px;
+}
+
+.aui-column-content h4 {
+	background: #eee;
+	padding: 3px;
+}
+
+h3 {
+    margin: 0 !important;
+}
+
+div.timer {
+    text-align: right;
+    font-weight: bold;
+}
