@@ -1,5 +1,9 @@
+<#assign portlet=JspTaglibs["http://java.sun.com/portlet"]>
+<@portlet.defineObjects/>
+
 <#import "/spring.ftl" as spring />
-<div class="aui-layout-content">
+
+    <div class="aui-layout-content">
     <#include "menu.ftl">
         <div class="aui-column aui-w95 aui-column-first">
             <div class="aui-layout-content">

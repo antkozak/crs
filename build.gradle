@@ -1,40 +1,55 @@
 dependsOnChildren()
 
 allprojects {
-    apply plugin: 'java'
     group = 'com.ccc'
     version = '0.0.1-SNAPSHOT'
-    def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
-
     repositories {
         mavenCentral()
-        mavenRepo url: localMavenRepo
+        mavenRepo url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
     }
 }
 
-project(':domain') {
-    dependencies {
-        compile project(':api')
+subprojects {
+    apply plugin: 'java'
+
+    //Tasks that will be executed while 'gradle' is called without params.
+    defaultTasks 'clean', 'pmd', 'build'
+
+    configurations {
+        pmdConf
     }
-}
 
-project(':service') {
     dependencies {
-        compile project(':api'), project(':domain')
+        pmdConf group: 'pmd', name: 'pmd', version: '4.2.5'
     }
-}
 
-project(':web') {
-    apply plugin: 'war'
-    dependencies {
-        compile project(':api'), project(':domain'), project(':service')
+    task pmd (dependsOn: compileJava) << {
+        println 'Running PMD static code analysis'
+        ant {
+            if (!buildDir.isDirectory()) {
+                buildDir.mkdirs()
+            }
+            taskdef(name: 'pmd', classname: 'net.sourceforge.pmd.ant.PMDTask', classpath: configurations.pmdConf.asPath)
+            taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmdConf.asPath)
 
-        compile group: "org.springframework", name: "spring-core", version: "3.1.0.RELEASE"
-        compile group: "org.springframework", name: "spring-beans", version: "3.1.0.RELEASE"
-        compile group: "org.springframework", name: "spring-context", version: "3.1.0.RELEASE"
-        compile group: "org.springframework", name: "spring-web", version: "3.1.0.RELEASE"
-        compile group: "org.springframework", name: "spring-webmvc-portlet", version: "3.1.0.RELEASE"
-        compile group: "org.freemarker", name: "freemarker", version: "2.3.14"
-        providedCompile group: 'javax.portlet', name: 'portlet-api', version: '2.0'
+            pmd(shortFilenames: 'true',
+                    failonruleviolation: 'false',//TODO set to true after resolving pmd issues
+                    rulesetfiles: 'rulesets/basic.xml, rulesets/braces.xml, rulesets/clone.xml, rulesets/coupling.xml, rulesets/codesize.xml, rulesets/design.xml, rulesets/migrating.xml, rulesets/naming.xml, rulesets/strictexception.xml, rulesets/strings.xml, rulesets/unusedcode.xml') {
+                formatter(type: 'xml', toFile: 'build/pmd.xml')
+                fileset(dir: "src/main/java") {
+                    include(name: '**/*.java')
+                }
+                fileset(dir: "src/test/java") {
+                    include(name: '**/*.java')
+                }
+            }
+            cpd(minimumTokenCount: '50', format: 'xml',
+                    ignoreIdentifiers: 'true',
+                    outputFile: 'build/cpd.xml') {
+                fileset(dir: "src/main/java") {
+                    include(name: '**/*.java')
+                }
+            }
+        }
     }
 }

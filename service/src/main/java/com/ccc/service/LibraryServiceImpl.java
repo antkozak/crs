@@ -7,6 +7,7 @@ import com.ccc.domain.ArticleImpl;
 import com.ccc.domain.FolderImpl;
 import java.util.Arrays;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
 /**
  * //TODO class description
@@ -15,6 +16,7 @@ import java.util.List;
  *
  * @author Nikita Levyankov
  */
+@Component
 public class LibraryServiceImpl implements LibraryService {
 
     public List<Folder> getFolders() {

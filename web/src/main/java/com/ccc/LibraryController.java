@@ -3,12 +3,16 @@ package com.ccc;
 import com.ccc.api.service.LibraryService;
 import java.util.HashMap;
 import java.util.Map;
-import javax.portlet.ActionRequest;
-import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
+import javax.portlet.ResourceResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.ModelAndView;
-import org.springframework.web.portlet.mvc.Controller;
+import org.springframework.web.portlet.bind.annotation.RenderMapping;
+import org.springframework.web.portlet.bind.annotation.ResourceMapping;
+import org.springframework.web.portlet.mvc.AbstractController;
 
 /**
  * //TODO class description
@@ -17,20 +21,26 @@ import org.springframework.web.portlet.mvc.Controller;
  *
  * @author Nikita Levyankov
  */
-public class LibraryController implements Controller {
+@RequestMapping("VIEW")
+@Controller(value="libraryController")
+public class LibraryController{
 
     private LibraryService libraryService;
 
+    @Autowired
     public void setLibraryService(LibraryService libraryService) {
         this.libraryService = libraryService;
     }
 
-    public void handleActionRequest(ActionRequest request, ActionResponse response) throws Exception {
-    }
-
+    @RenderMapping(value="NORMAL")
     public ModelAndView handleRenderRequest(RenderRequest request, RenderResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("folders", libraryService.getFolders());
         return new ModelAndView("library", model);
+    }
+
+    @ResourceMapping
+    public void viewAsText(ResourceResponse response) {
+        response.setContentType("application/json");
     }
 }

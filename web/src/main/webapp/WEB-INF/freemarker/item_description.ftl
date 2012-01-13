@@ -15,4 +15,7 @@
     pellentesque
     platea placerat, porta egestas parturient penatibus platea penatibus vel. Massa mus
     tristique auctor ridiculus vut augue porta.
+
+    <@portlet.resourceURL var="viewAsText" id="viewAsText" />
+    <a href="${viewAsText}" onclick="return !window.open(this.href);">test</a>
 </div>
