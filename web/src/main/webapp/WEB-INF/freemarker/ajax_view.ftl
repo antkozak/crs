@@ -22,7 +22,7 @@ AUI().ready('aui-io-request', function(A) {
             start: function(event, id) {
                 console.log('-');
                 console.log(this.get('uri'));
-                console.log('start');
+                console.log('start test AJAX application');
             },
             success: function(event, id, xhr) {
                 var data = this.get('responseData');
@@ -34,9 +34,6 @@ AUI().ready('aui-io-request', function(A) {
             },
             failure: function(event, id, xhr) {
                 console.log('failure');
-            },
-            end: function(event, id) {
-                console.log('end');
             }
         },
         after: {
