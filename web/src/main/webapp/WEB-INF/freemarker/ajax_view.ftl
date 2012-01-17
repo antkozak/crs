@@ -22,7 +22,7 @@ AUI().ready('aui-io-request', function(A) {
             start: function(event, id) {
                 console.log('-');
                 console.log(this.get('uri'));
-                console.log('start test AJAX application');
+                console.log('Testing git pull/push');
             },
             success: function(event, id, xhr) {
                 var data = this.get('responseData');
@@ -36,7 +36,7 @@ AUI().ready('aui-io-request', function(A) {
                 console.log('failure');
             },
             end: function(event, id) {
-                console.log('2end2');
+                console.log('Need to generate ssh keys');
             }
         },
         after: {
