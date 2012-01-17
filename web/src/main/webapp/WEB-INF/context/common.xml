@@ -27,7 +27,7 @@
     -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="suffix" value=".ftl"/>
-        <property name="cache" value="true"/>
+        <property name="cache" value="false"/>
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="requestContextAttribute" value="rc"/>
     </bean>
