@@ -29,6 +29,7 @@
         <property name="cache" value="true"/>
         <property name="suffix" value=".ftl"/>
         <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="requestContextAttribute" value="rc"/>
     </bean>
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
