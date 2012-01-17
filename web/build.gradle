@@ -9,9 +9,16 @@ dependencies {
     compile group: "org.springframework", name: "spring-webmvc", version: "3.1.0.RELEASE"
     compile group: "org.springframework", name: "spring-webmvc-portlet", version: "3.1.0.RELEASE"
     compile group: "org.freemarker", name: "freemarker", version: "2.3.14"
+    compile 'net.sf.json-lib:json-lib-ext-spring:1.0.2'
+    compile 'log4j:log4j:1.2.16'
+    compile 'commons-lang:commons-lang:2.3'
+    compile ('org.glassfish.web:jstl-impl:1.2') {
+        exclude module: 'jsp-api'
+    }
     //Jackson JSON Mapper
     compile group: "org.codehaus.jackson", name: "jackson-mapper-asl", version: "1.7.1"
     providedCompile group: 'javax.portlet', name: 'portlet-api', version: '2.0'
+    providedCompile group: 'com.liferay.portal', name: 'portal-service', version: '6.0.2'
 }
 
 task deploylocal(dependsOn: build) << {

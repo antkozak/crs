@@ -1,4 +1,4 @@
-package com.ccc;
+package com.ccc.library;
 
 import com.ccc.api.service.LibraryService;
 import java.util.HashMap;

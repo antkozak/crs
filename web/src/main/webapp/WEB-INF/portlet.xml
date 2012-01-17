@@ -15,4 +15,21 @@
             <title>POC Library</title>
         </portlet-info>
     </portlet>
+
+    <portlet>
+        <portlet-name>ccc-ajax-portlet</portlet-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>/WEB-INF/ajax-portlet.xml</value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+        </supports>
+        <portlet-info>
+            <title>CCC Ajax</title>
+        </portlet-info>
+    </portlet>
+
 </portlet-app>

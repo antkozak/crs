@@ -2,5 +2,6 @@
 <display>
     <category name="category.poc">
         <portlet id="library"/>
+        <portlet id="ccc-ajax-portlet"/>
     </category>
 </display>

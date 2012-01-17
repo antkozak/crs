@@ -9,4 +9,11 @@
         <header-portlet-css>/css/main.css</header-portlet-css>
         <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
     </portlet>
+
+    <portlet>
+        <portlet-name>ccc-ajax-portlet</portlet-name>
+        <icon>/icon.png</icon>
+        <instanceable>true</instanceable>
+        <css-class-wrapper>ccc-ajax-portlet-portlet</css-class-wrapper>
+    </portlet>
 </liferay-portlet-app>
