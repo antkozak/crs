@@ -19,11 +19,6 @@ AUI().ready('aui-io-request', function(A) {
         autoLoad: false,
         cache: false,
         on: {
-            start: function(event, id) {
-                console.log('-');
-                console.log(this.get('uri'));
-                console.log('start');
-            },
             success: function(event, id, xhr) {
                 var data = this.get('responseData');
                 var out = A.JSON.stringify(data);
@@ -36,7 +31,7 @@ AUI().ready('aui-io-request', function(A) {
                 console.log('failure');
             },
             end: function(event, id) {
-                console.log('end');
+                console.log('2end2');
             }
         },
         after: {
