@@ -1,18 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
              xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
     <portlet>
         <portlet-name>library</portlet-name>
         <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>/WEB-INF/context/library-portlet.xml</value>
+        </init-param>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>view</portlet-mode>
         </supports>
         <resource-bundle>Messages</resource-bundle>
         <portlet-info>
-            <title>POC Library</title>
+            <title>Library</title>
         </portlet-info>
     </portlet>
 
@@ -21,7 +24,7 @@
         <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
         <init-param>
             <name>contextConfigLocation</name>
-            <value>/WEB-INF/ajax-portlet.xml</value>
+            <value>/WEB-INF/context/ajax-portlet.xml</value>
         </init-param>
         <supports>
             <mime-type>text/html</mime-type>
@@ -32,4 +35,20 @@
         </portlet-info>
     </portlet>
 
+    <portlet>
+        <portlet-name>menu</portlet-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>/WEB-INF/context/menu-portlet.xml</value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+        </supports>
+        <resource-bundle>Messages</resource-bundle>
+        <portlet-info>
+            <title>Menu</title>
+        </portlet-info>
+    </portlet>
 </portlet-app>

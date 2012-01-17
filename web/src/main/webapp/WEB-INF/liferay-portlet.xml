@@ -12,8 +12,14 @@
 
     <portlet>
         <portlet-name>ccc-ajax-portlet</portlet-name>
-        <icon>/icon.png</icon>
+        <icon>/images/icon.png</icon>
         <instanceable>true</instanceable>
         <css-class-wrapper>ccc-ajax-portlet-portlet</css-class-wrapper>
+    </portlet>
+
+    <portlet>
+        <portlet-name>menu</portlet-name>
+        <instanceable>true</instanceable>
+        <!--<header-portlet-css>/css/main.css</header-portlet-css>-->
     </portlet>
 </liferay-portlet-app>
