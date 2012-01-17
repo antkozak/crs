@@ -21,14 +21,6 @@
         <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
     </bean>
 
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basenames">
-            <list>
-                <value>Messages</value>
-            </list>
-        </property>
-    </bean>
-
     <!--
     View resolvers can also be configured with ResourceBundles or XML files. If you need
     different view resolving based on Locale, you have to use the resource bundle resolver.
@@ -38,6 +30,14 @@
         <property name="cache" value="true"/>
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="requestContextAttribute" value="rc"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>Messages</value>
+            </list>
+        </property>
     </bean>
 
 </beans>
