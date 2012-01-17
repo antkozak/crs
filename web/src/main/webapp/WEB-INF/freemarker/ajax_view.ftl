@@ -34,6 +34,9 @@ AUI().ready('aui-io-request', function(A) {
             },
             failure: function(event, id, xhr) {
                 console.log('failure');
+            },
+            end: function(event, id) {
+                console.log('2end2');
             }
         },
         after: {
