@@ -1,3 +1,3 @@
-rootProject.name = 'poc'
+rootProject.name = 'crs'
 
 include 'api', 'domain', 'service', 'web'

@@ -20,6 +20,6 @@
     <portlet>
         <portlet-name>menu</portlet-name>
         <instanceable>true</instanceable>
-        <!--<header-portlet-css>/css/main.css</header-portlet-css>-->
+        <header-portlet-css>/css/menu.css</header-portlet-css>
     </portlet>
 </liferay-portlet-app>

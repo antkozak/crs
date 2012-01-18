@@ -1,10 +1,10 @@
-package com.ccc.service;
+package com.copyright.service;
 
-import com.ccc.api.Article;
-import com.ccc.api.Folder;
-import com.ccc.api.service.LibraryService;
-import com.ccc.domain.ArticleImpl;
-import com.ccc.domain.FolderImpl;
+import com.copyright.api.Article;
+import com.copyright.api.Folder;
+import com.copyright.api.service.LibraryService;
+import com.copyright.domain.ArticleImpl;
+import com.copyright.domain.FolderImpl;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.stereotype.Component;

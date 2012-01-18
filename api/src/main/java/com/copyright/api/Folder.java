@@ -1,4 +1,4 @@
-package com.ccc.api;
+package com.copyright.api;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  * @author Nikita Levyankov
  */
-public interface Article extends Serializable {
+public interface Folder extends Serializable {
 
     Integer getId();
 

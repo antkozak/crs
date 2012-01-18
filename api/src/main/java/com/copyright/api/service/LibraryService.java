@@ -1,7 +1,7 @@
-package com.ccc.api.service;
+package com.copyright.api.service;
 
-import com.ccc.api.Article;
-import com.ccc.api.Folder;
+import com.copyright.api.Article;
+import com.copyright.api.Folder;
 import java.util.List;
 
 /**

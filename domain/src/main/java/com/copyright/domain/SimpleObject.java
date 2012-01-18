@@ -1,4 +1,4 @@
-package com.ccc.domain;
+package com.copyright.domain;
 
 /**
  * Simple object class.

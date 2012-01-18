@@ -1,0 +1,24 @@
+div#menu {
+    width: 100%;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#menu li {
+    text-align: center;
+    padding-right: 15px;
+}
+
+#menu ul a {
+    display: block;
+    text-decoration: none;
+}
+
+#menu li img {
+    width: 30px;
+    height: 30px;
+}

@@ -1,7 +1,7 @@
 dependsOnChildren()
 
 allprojects {
-    group = 'com.ccc'
+    group = 'com.copyright'
     version = '0.0.1-SNAPSHOT'
     repositories {
         mavenCentral()

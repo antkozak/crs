@@ -1,6 +1,6 @@
-package com.ccc.library;
+package com.copyright.library;
 
-import com.ccc.api.service.LibraryService;
+import com.copyright.api.service.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

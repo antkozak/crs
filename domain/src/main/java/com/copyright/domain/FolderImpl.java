@@ -1,6 +1,6 @@
-package com.ccc.domain;
+package com.copyright.domain;
 
-import com.ccc.api.Folder;
+import com.copyright.api.Folder;
 
 /**
  * //TODO class description
